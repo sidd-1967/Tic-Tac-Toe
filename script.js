@@ -24,9 +24,9 @@ function makeMove(cellIndex) {
       const message = `Player ${currentPlayer} wins!`;
       displayStatus(message);
       Swal.fire({
-        html: '<img src="image/game-over.png" alt="Image">',
-        title: 'Game Over',
-        // text: message,
+        html: '<img src="image/game-over.webp" alt="Image">',
+        // title: 'Game Over',
+        text: message,
         // icon: 'success',
         confirmButtonText: 'OK',
         allowOutsideClick: false,
@@ -40,7 +40,7 @@ function makeMove(cellIndex) {
       Swal.fire({
         html: '<img src="image/draw.png" alt="Image">',
         title: "It's a draw",
-        // text: "It's a draw!",
+        text: "It's a draw!",
         // icon: 'info',
         confirmButtonText: 'OK',
         allowOutsideClick: false,
