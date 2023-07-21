@@ -1,96 +1,125 @@
 body {
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  /* background-color: rgb(0, 0, 0); */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url(image/fd.jpeg);
+}
+
+.container {
+  text-align: center;
+  margin-top: 150px;
+  animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
-  
-  .container {
-    text-align: center;
-    margin-top: 100px;
-    animation: fade-in 1s;
+  100% {
+    opacity: 1;
   }
-  
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  h1 {
-    font-size: 36px;
-    color: white;
+}
+
+h1 {
+  font-size: 36px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: glow 2s infinite;
   }
-  
-  @keyframes glow {
-    0% {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    50% {
-      text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7);
-    }
-    100% {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+  50% {
+    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7);
   }
-  
-  .board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 306px;
-    margin: 30px auto;
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  
-  .cell {
-    width: 100px;
-    height: 100px;
-    border: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    cursor: pointer;
-    background-color: black;
-    color: red;
-    transition: transform 0.2s;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 306px;
+  margin: 30px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  cursor: pointer;
+  background-color: #21070759;
+  color: #fbd7d7;
+  transition: transform 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: yellow;
+  color: black;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+#status {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
   }
-  
-  .cell:hover {
+  50% {
     transform: scale(1.1);
   }
-  
-  button {
-    font-size: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: yellow;
-    color: black;
-    transition: background-color 0.3s;
-    border-radius: 10px;
+  100% {
+    transform: scale(1);
   }
-  
-  #status {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: white;
-    animation: heartbeat 1.5s infinite;
-  }
-  
-  @keyframes heartbeat {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
+}
+
+/* Media queries for mobile and tablet responsiveness */
+@media screen and (max-width: 767px) {
+.board {
+  max-width: 250px;
+}
+.cell {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+}
+h1 {  
+  font-size: 24px;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+.board {
+  max-width: 400px;
+}
+.cell {
+  width: 120px;
+  height: 120px;
+  font-size: 48px;
+}
+h1 {
+  font-size: 30px;
+}
+}
